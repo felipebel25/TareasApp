@@ -1,0 +1,138 @@
+.tododesktop{
+    width: 100%;
+    background-color: #18191a;
+    height: 87%;
+}
+.tododesktop--container{
+    width: 100%;
+    height: 95%;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.tododesktop--zero{
+    width: 80%;
+    margin: 0 auto;   
+    font-size: 2rem;
+    margin-top: 20%;
+    color: white;
+    text-align: center;
+}
+.todocreate{
+    text-align: center;
+    width: 98%;
+    margin: 0 auto;
+    padding: 1rem;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+}
+.todocreate input{
+    
+    width: 73%;
+    margin-left: 5%;
+    height: 5.3rem;
+    font-size: 2rem;
+    border: 1px solid #1dc9ff;
+    padding-left: 2rem;
+    background-color: #18191a;
+    color: white;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+.todocreate input:focus-visible{
+    outline: none;
+}
+
+.todocreate__error{
+    color: #1dc9ff;
+    width: 85%;
+    text-align: left;
+    font-size:1.8rem;
+    margin: 1rem auto;
+}
+
+.tododesktop--list{
+    overflow: auto;
+    height: 80%;
+}
+.todocreate__button{
+    height: 100%;
+    width:6.4%;
+    cursor: pointer;
+    border: none;
+    background-color:#1dc9ff;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.todocreate__button:hover{
+    opacity: 0.5;
+}
+.todocreate__button img{
+    width: 100%;
+
+}
+.todocreate input::placeholder{
+    color: white;
+    font-size: 1.8rem;
+}
+.todoscreate__length{
+    color: white;
+    font-size: 2rem;
+    width:10%; 
+}
+.tododesk{
+    border: 1px solid #1dc9ff;
+    border-radius: 5px;
+    width: 85%;
+    margin: 1rem;
+    display: flex;
+    height: 7rem;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1rem;
+
+}
+.tododesk--estatus{
+    width: 15%;
+    
+}
+.tododesk__info{
+    width: 100%;
+    margin-left: 3% ;
+    font-size: 1.8rem;
+    color: #1dc9ff;
+    text-transform: capitalize;
+
+}
+.tododesk__info--name{
+    color: white;
+}
+.tododesk--checkbox{
+    width:6rem;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.tododesk--checkbox img{
+    width: 100%;
+}
+.tododesk--delete{
+    width:10%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.tododesk--delete img{
+    width: 75%;
+}
+.tododesk--delete img:hover{
+    cursor: pointer;
+
+    border: 1px solid #1dc9ff;
+
+}

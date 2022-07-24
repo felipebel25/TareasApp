@@ -1,0 +1,23 @@
+
+:root{
+    --secundario: #AF7EEB;
+    --secundario-svg: #80B51C;
+    --botones: #80B51C;
+    --botones--text: #ffffff;
+    --background--color: #2a203d;
+    --text: #6c757d;
+    --oscuro:black;
+    --font-letra: 1.6rem;
+    --peligro:#0026ff;
+    --claro:white;
+}
+.login{    
+    background-color: var(--background--color);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 3;
+}
+

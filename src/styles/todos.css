@@ -1,0 +1,98 @@
+.container__todos{
+    height: 100vh;
+}
+.todo__list{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #18191a;
+    overflow-y: scroll;
+
+}
+.todo{
+    background-color: #303031;
+    width: 100%;
+    height: 6rem;
+    min-height: 6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.todo__check{
+    margin-right: 1rem;
+}
+.todo__remove{
+    margin-right: 1rem;
+
+}
+.todo__text{
+    color: #1dc9ff;
+    font-size: 1.2rem;
+    width: 80%;
+    padding-left: 1rem;
+    max-width: 80%;
+    margin-right: 1rem;
+}
+.todo__text--name{
+    color: white;
+}
+
+.todos__add{
+    position: fixed;
+    z-index: 5;
+    top: 90.5%;
+    right: 2rem;
+    background-color: transparent;
+    border: none;
+}
+.todos__add img{
+    width: 4rem;
+    cursor: pointer;
+}
+
+.todo__realize{
+    position: absolute;
+    bottom: 5%;
+    font-size: 1.7rem;
+    color: white;
+    left: 5%;
+}
+.todo__error{
+    position: absolute;
+    bottom: 11.9%;
+    font-size: 1.7rem;
+    color: #ff2c52;
+    left: 5%;
+}
+.todo__nouser{
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 7rem;
+    background-color: #AF7EEB;
+    text-align: center;
+}/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #18191a; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1dc9ff; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

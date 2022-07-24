@@ -1,0 +1,50 @@
+.home{
+    background-color: #18191a;
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+}
+.home--user{
+    background-color: #18191a;
+    height:17.4% ;
+    border: 1px solid transparent;
+}
+.home__session{
+    width: 100%;
+    height: 70.5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+.home__content{
+    width: 100%;
+    height: 100%;
+}
+.home__session--button{
+    border: none;
+    border-top: 1px solid #1dc9ff;
+    width: 90%;
+    height: 5rem;
+    margin: 1rem 0;
+    background-color: #18191a;
+    color: #1dc9ff;
+}
+.home__footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    background-color: #2a203d;
+}
+.home__footer--logout{
+    background-color: transparent;
+    color: #FF2C52;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+}
