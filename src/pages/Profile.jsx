@@ -9,12 +9,11 @@ import { types } from "../types/types";
 import { useContext } from "react";
 
 const Profile = () => {
-  const { user, dispatch } = useContext(AuthContext);
+  const {  dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate()
   const [logout, setLogout] = useState(false);
   const datos = JSON.parse(localStorage.getItem("usuario"));
-  console.log(datos);
   const handleLogout = () => {
     localStorage.removeItem('usuario')
     dispatch({
@@ -22,8 +21,6 @@ const Profile = () => {
     })
     setLogout(!logout)
     navigate('/login',{replace: true} )
-    
-
   }
 
   return (

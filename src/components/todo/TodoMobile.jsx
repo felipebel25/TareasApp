@@ -15,8 +15,11 @@ const TodoMobile = ({
 }) => {
   return (
     <>
+      {add && (
+        <InputPut setData={setAddData} action="Agregar" offModal={setAdd} />
+      )}
       <div className="todo__list">
-        {todos.length === 0 && loading && <LoadingSpinner  /> }
+        {todos.length === 0 && loading && <LoadingSpinner />}
         {todos.length > 0 ? (
           todos.map((algo, index) => (
             <Todo
@@ -34,6 +37,8 @@ const TodoMobile = ({
         ) : (
           ""
         )}
+      </div>
+      <div className="todo__downinfo">
         {todos.length >= 20 ? (
           <h4 className="todo__error">
             Numero de tareas maximo alcanzado, soluciona tus tareas
@@ -43,18 +48,15 @@ const TodoMobile = ({
             Tienes {todos.length} tarea{todos.length === 1 ? "" : "s"}
           </h4>
         )}
+        <button
+          onClick={() => {
+            setAdd(true);
+          }}
+          className="todos__add"
+        >
+          <img src={addIcon} alt="" />
+        </button>
       </div>
-      {add && (
-        <InputPut setData={setAddData} action="Agregar" offModal={setAdd} />
-      )}
-      <button
-        onClick={() => {
-          setAdd(true);
-        }}
-        className="todos__add"
-      >
-        <img src={addIcon} alt="" />
-      </button>
     </>
   );
 };

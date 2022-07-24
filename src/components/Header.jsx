@@ -2,10 +2,9 @@ import React from "react";
 import backIcon from "../assets/arrow_back_ios.svg";
 import { Link } from "react-router-dom";
 import profileIcon from "../assets/person.svg";
-import usersIcon from "../assets/users.svg";
 import { NavLink } from "react-router-dom";
-
 import tasksIcons from "../assets/list_alt.svg";
+import taskComplete from '../assets/complete.svg'
 import "../styles/header.css";
 const Header = ({ name = "", iconBack = false }) => {
   return (
@@ -37,7 +36,7 @@ const Header = ({ name = "", iconBack = false }) => {
           className={({ isActive }) => (isActive ? "header__buttons--active" : "header__buttons")}
         >
           <button >
-            <img src={usersIcon} alt="" />
+            <img src={taskComplete} alt="" />
           </button>
         </NavLink>
         <NavLink

@@ -2,6 +2,7 @@
     width: 100%;
     height: 100vh;
     background-color: #18191a;
+
 }
 
 .users{
@@ -54,5 +55,52 @@
     background-color: #18191a;
     width: 100%;
     height: 82%;
-   
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #18191a;
+}
+.complete--title{
+    font-size: 3rem;
+    color: white;
+    margin: 2rem 0;
+    text-align: center;
+}
+.complete{
+    border: 1px solid #1dc9ff;
+    border-radius: 1rem;
+    text-align: center;
+    height: auto;
+    padding:1rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+
+}
+.complete--name{
+    color: #1dc9ff;
+    text-transform: capitalize;
+    font-size: 3rem;
+
+}
+.complete--date{
+    text-transform: capitalize;
+
+    color: white;
+    font-size: 2rem;
+}
+@media (max-width: 790px) {
+.complete--title{
+    font-size: 2.5rem;
+}
+    .complete{
+        width: 90%;
+    }
+    .complete--name{
+    font-size: 2rem;
+
+}
+.complete--date{
+
+    font-size: 1.5rem;
+}
 }

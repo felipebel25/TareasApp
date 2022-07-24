@@ -14,7 +14,6 @@ const TodoApp = () => {
     }
     localStorage.setItem('user' , JSON.stringify(user))
   }, [user]);
-  console.log('hola');
   return (
     <AuthContext.Provider value={{ user, dispatch }}>
       <RouteTodo />

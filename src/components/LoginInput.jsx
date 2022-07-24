@@ -63,6 +63,7 @@ const Login = () => {
             type="email"
             name="email"
             id="email"
+            autoComplete='username'
             placeholder="Email"
             value={formValues.email}
             onChange={handelChange}
@@ -76,6 +77,7 @@ const Login = () => {
             type="password"
             name="password"
             id="password"
+            autoComplete='current-password'
             placeholder="Password"
             value={formValues.password}
             onChange={handelChange}
