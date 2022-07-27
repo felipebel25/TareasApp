@@ -6,17 +6,16 @@
 }
 .home--user{
     background-color: #18191a;
-    height:17.4% ;
+    height:auto ;
     border: 1px solid transparent;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 .home__session{
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 
-    height: 65.5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -28,7 +27,7 @@
 }
 .home__session--button{
     border: none;
-    border-top: 1px solid #1dc9ff;
+    border: 1px solid #1dc9ff;
     width: 90%;
     height: 5rem;
     margin: 1rem 0;
@@ -54,4 +53,7 @@
     height: 100%;
     font-size: 1.6rem;
     padding-left: 1rem;
+}
+a{
+    width: 100%;
 }

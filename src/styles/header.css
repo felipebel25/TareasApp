@@ -61,9 +61,12 @@
   height: 100%;
   
 }
+.header__user a{
+  width: auto;
+}
 .header__username{
     width: 50%;
-    font-size:2rem;
+    font-size:1.6rem;
     text-decoration: underline #242526;
     color: white;
     text-transform: capitalize;
@@ -102,7 +105,7 @@
     width: 3rem;
   }
   .header__buttons img {
-    width: 3rem;
+    width: 2.3rem;
   }
   .header__buttons button {
     height: 98%;

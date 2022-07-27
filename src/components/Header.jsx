@@ -32,7 +32,7 @@ const Header = ({ name = "", iconBack = false }) => {
       </div>
       <div className="headerNav">
         <NavLink
-          to="/"
+          to="/complete"
           className={({ isActive }) => (isActive ? "header__buttons--active" : "header__buttons")}
         >
           <button >

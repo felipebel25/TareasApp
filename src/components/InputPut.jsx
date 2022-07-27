@@ -31,7 +31,7 @@ const InputPut = ({ action = "", offModal, setData }) => {
     <>
       <div className="content__input" onClick={closeModal} />
       <main className="input">
-        <h1 className="input--title">{action} tu input</h1>
+        <h1 className="input--title">{action} tu tarea</h1>
         {error && <p className="input--error animate__animated  animate__shakeX">{error}</p>}
         <input
           type="text"

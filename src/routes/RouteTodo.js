@@ -5,11 +5,21 @@ import PublicRoute from "./PublicRoutes";
 import PrivateRoute from "./PrivateRoutes";
 
 import TodoRouter from "./TodoRoute";
+import Home from "../pages/Home";
 
 function RouteTodo() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <PublicRoute>
+              <Home />
+            </PublicRoute>
+          }
+        />
         <Route
           exact
           path="/login"
@@ -28,7 +38,7 @@ function RouteTodo() {
             </PublicRoute>
           }
         />
-         <Route
+        <Route
           path="/*"
           element={
             <PrivateRoute>
