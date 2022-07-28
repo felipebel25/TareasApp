@@ -271,6 +271,7 @@ input:-webkit-autofill{
 .input--error{
     font-size: 1.5rem;
     margin-top: 1rem;
+    color:white;
 }
 /* Faster transition in Safari for less noticable fractional font-size issue */
 @media not all and (min-resolution:.001dpcm) {

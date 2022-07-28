@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import registerApi from "../../apis/pushRegisterApi";
 import validateRegister from "../../helpers/validateRegister";
-// import Input from "./Input";
+import "animate.css";
+
 const RegisterLogin = () => {
   let navigate = useNavigate();
   const initialValuesDev = {
@@ -19,6 +20,7 @@ const RegisterLogin = () => {
     errors: "",
     statusCode: "",
   });
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [submit, setSubmit] = useState(false);
 
@@ -33,36 +35,46 @@ const RegisterLogin = () => {
     e.preventDefault();
     setSubmit(true);
   };
-
   useEffect(() => {
     if (submit && !formErrors) {
-      registerApi({ password, name: name.trim() , email })
+      setLoading(true);
+      registerApi({ password, name: name.trim(), email })
         .then((data) => {
-          const registro = data.createdAt
+          const registro = data.createdAt;
           setSubmit(false);
           setRegister(data);
           if (registro) {
-            navigate('/login',{replace: true})
+            setLoading(false);
+            navigate("/login", { replace: true });
           }
         })
         .catch((er) => {
           setErrors(er);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     }
   }, [submit]);
-  
+
   useEffect(() => {
     const { email, password, name, password2 } = formValues;
     if (
       email.length > 0 ||
       password.length > 0 ||
-      name.length > 0 || password2.length > 0
+      name.length > 0 ||
+      password2.length > 0
     ) {
       setFormErrors(validateRegister(formValues));
     }
   }, [formValues]);
   return (
     <>
+      {loading && (
+        <p className="loading animate__animated animate__flash animate__infinite">
+          Cargando...
+        </p>
+      )}
       {register.createdAt && <div className="message-succes">Registrado!</div>}
       {register.statusCode === 409 && (
         <div className="message-succes">Email no disponible...</div>
@@ -77,7 +89,7 @@ const RegisterLogin = () => {
           <h1>Registrate!</h1>
           <p>Registrate para Continuar</p>
         </div>
-        
+
         <label className="pure-material-textfield-outlined">
           <input
             type="text"
