@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
-
+import Header from "../components/Navbar/Header";
 
 import createTodo from "../apis/createTodo";
-import "../styles/todos.css";
 import getTodosApi from "../apis/getTodosApi";
+
 import TodoMobile from "../components/todo/TodoMobile";
 import TodoDesktop from "../components/todo/TodoDesktop";
 
+import "../styles/todos.css";
 const Todos = () => {
   const [user, setUser] = useState();
   const [add, setAdd] = useState(false);
@@ -23,7 +23,7 @@ const Todos = () => {
       setLoading(true);
       getTodosApi(datos.user.id).then((data) => {
         setTodos(data);
-        setLoading(false)
+        setLoading(false);
       });
       setUser(datos.user.name);
       setIdUser(datos.user.id);
@@ -45,7 +45,7 @@ const Todos = () => {
 
   return (
     <main className="container__todos">
-      <Header name={user}/>
+      <Header name={user} />
       {validateScreen ? (
         <TodoMobile
           token={token}

@@ -1,11 +1,11 @@
 import React from "react";
-import backIcon from "../assets/arrow_back_ios.svg";
+import backIcon from "../../assets/arrow_back_ios.svg";
 import { Link } from "react-router-dom";
-import profileIcon from "../assets/person.svg";
+import profileIcon from "../../assets/person.svg";
 import { NavLink } from "react-router-dom";
-import tasksIcons from "../assets/list_alt.svg";
-import taskComplete from '../assets/complete.svg'
-import "../styles/header.css";
+import tasksIcons from "../../assets/list_alt.svg";
+import taskComplete from '../../assets/complete.svg'
+import "../../styles/header.css";
 const Header = ({ name = "", iconBack = false }) => {
   return (
     <header className="header">

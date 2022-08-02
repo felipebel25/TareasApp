@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import User from "../components/User";
-import Header from "../components/Header";
+import Header from "../components/Navbar/Header";
 
 import "../styles/home.css";
 import { AuthContext } from "../auth/authContext";

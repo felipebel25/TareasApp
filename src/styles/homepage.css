@@ -67,8 +67,8 @@
     align-items: center;
   }
   .homepage__image img {
-    min-width: 200px;
-    width: 59%;
+    min-width: 140px;
+    width: 50%;
   }
   .homepage__container {
     text-align: center;

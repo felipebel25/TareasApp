@@ -6,12 +6,7 @@ import "animate.css";
 
 const RegisterLogin = () => {
   let navigate = useNavigate();
-  const initialValuesDev = {
-    email: "felipemedina.developer@gmail.com",
-    password: "admin123",
-    name: "fua",
-    password2: "admin123",
-  };
+
   const initialValues = { email: "", password: "", name: "", password2: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState(initialValues);
@@ -21,19 +16,18 @@ const RegisterLogin = () => {
     statusCode: "",
   });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
   const [submit, setSubmit] = useState(false);
 
   const { password, name, email } = formValues;
-
   const handleChange = (e) => {
     e.persist();
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
-
   const handelSubmit = (e) => {
     e.preventDefault();
-    setSubmit(true);
+    if (!formErrors) {
+      setSubmit(true);
+    }
   };
   useEffect(() => {
     if (submit && !formErrors) {
@@ -49,14 +43,20 @@ const RegisterLogin = () => {
           }
         })
         .catch((er) => {
-          setErrors(er);
+          console.error(er);
         })
         .finally(() => {
           setLoading(false);
+          setSubmit(false);
         });
     }
+    return () => {
+      setFormValues(initialValues);
+      setSubmit(false);
+      setFormErrors(initialValues);
+      setLoading(false);
+    };
   }, [submit]);
-
   useEffect(() => {
     const { email, password, name, password2 } = formValues;
     if (
@@ -86,8 +86,8 @@ const RegisterLogin = () => {
 
       <form onSubmit={handelSubmit} className="card__info--input">
         <div className="card__input--title">
-          <h1>Registrate!</h1>
-          <p>Registrate para Continuar</p>
+          <h1>¡Regístrate!</h1>
+          <p>Regístrate para Continuar</p>
         </div>
 
         <label className="pure-material-textfield-outlined">
@@ -99,10 +99,13 @@ const RegisterLogin = () => {
             placeholder="Tu nombre"
             value={formValues.name}
             onChange={handleChange}
+            className={`${formValues.name.length !== 0 ? "visited" : ""}`}
           />
-          <span>Nombre Completo</span>
+          <span>Tu Primer Nombre</span>
         </label>
-        <p className="password-error">{formErrors.name}</p>
+        <p className="password-error animate__animated animate__shakeX ">
+          {formErrors.name}
+        </p>
         <label className="pure-material-textfield-outlined">
           <input
             type="email"
@@ -112,11 +115,13 @@ const RegisterLogin = () => {
             placeholder="Correo@gmail.com"
             value={formValues.email}
             onChange={handleChange}
+            className={`${formValues.email.length !== 0 ? "visited" : ""}`}
           />
           <span>Correo</span>
         </label>
-
-        <p className="password-error">{formErrors.email}</p>
+        <p className="password-error animate__animated animate__shakeX ">
+          {formErrors.email}
+        </p>
         <label className="pure-material-textfield-outlined">
           <input
             type="password"
@@ -126,11 +131,14 @@ const RegisterLogin = () => {
             placeholder="Contraseña"
             value={formValues.password}
             onChange={handleChange}
+            className={`${formValues.password.length !== 0 ? "visited" : ""}`}
           />
           <span>Contraseña</span>
         </label>
 
-        <p className="password-error">{formErrors.password}</p>
+        <p className="password-error animate__animated animate__shakeX ">
+          {formErrors.password}
+        </p>
         <label className="pure-material-textfield-outlined">
           <input
             type="password"
@@ -140,15 +148,18 @@ const RegisterLogin = () => {
             value={formValues.password2}
             onChange={handleChange}
             autoComplete="new-password"
+            className={`${formValues.password2.length !== 0 ? "visited" : ""}`}
           />
           <span>Confirma tu contraseña</span>
         </label>
 
-        <p className="password-error">{formErrors.password2}</p>
+        <p className="password-error animate__animated animate__shakeX ">
+          {formErrors.password2}
+        </p>
 
         <div className="card__info--buttons">
           <button className="card__buttons--register" type="submit">
-            Registrate
+            Regístrate
           </button>
         </div>
         <div className="card__acount">

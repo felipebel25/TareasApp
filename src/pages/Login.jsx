@@ -2,7 +2,7 @@ import React from "react";
 import LoginInput from "../components/LoginInput";
 import "../styles/login.css";
 import LayoutAuth from "../components/auth/LayoutAuth";
-const Login = ({setLogged}) => {
+const Login = () => {
   return (
     <LayoutAuth>
       <LoginInput />

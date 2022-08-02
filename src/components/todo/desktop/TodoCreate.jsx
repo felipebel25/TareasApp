@@ -25,11 +25,11 @@ const TodoCreate = ({setAddData, todos}) => {
     if (tarea.length < 4) {
       setError("La tarea debe tener min 4 caracteres.");
     }
-    if (tarea.length > 4 && tarea.length < 16) {
+    if (tarea.length > 4 && tarea.length < 15) {
       setError("");
     }
-    if (tarea.length > 16) {
-      setError("La tarea debe tener min 4 caracteres y max 16 caracteres.");
+    if (tarea.length > 15) {
+      setError("La tarea debe tener min 4 caracteres y max 15 caracteres.");
     }
     if (tarea.length === 0) {
       setError("");

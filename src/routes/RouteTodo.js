@@ -6,10 +6,12 @@ import PrivateRoute from "./PrivateRoutes";
 
 import TodoRouter from "./TodoRoute";
 import Home from "../pages/Home";
+import RotateScreen from "../components/utils/RotateScreen";
 
 function RouteTodo() {
   return (
     <BrowserRouter>
+      <RotateScreen />
       <Routes>
         <Route
           exact

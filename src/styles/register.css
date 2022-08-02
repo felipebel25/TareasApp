@@ -22,7 +22,9 @@ html{
 }
 .loading{
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
+
 .layoutAuth {
     background-color: var(--claro);
    
@@ -116,7 +118,6 @@ html, body {
 }
 .card__info--input p{
     padding: 0.3rem;
-    color: rgb(227 227 227);
     text-align: left;
     font-size: 1.4rem;
 }
@@ -165,7 +166,9 @@ html, body {
     color: var(--secundario);
     font-size: 1.3rem;
 }
-
+.password-error{
+    color: rgb(255, 75, 75);
+}
 @media (max-width:992px) {
 .loading{
     font-size: 2rem;

@@ -15,8 +15,9 @@ const Login = () => {
       : "",
     password: "",
   };
+  const initialErrors = {email: "", password: ""}
   const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState(initialErrors);
   const [isSubmit, setIsSubmit] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -34,7 +35,6 @@ const Login = () => {
       setFormErrors(validateLogin(formValues));
     }
   }, [formValues]);
-
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       setLoading(true);
@@ -52,7 +52,7 @@ const Login = () => {
             setLoading(false);
             setFormErrors({
               ...formErrors,
-              password: "Contrasena o correo incorrecto",
+              password: "Contraseña o correo incorrecto",
             });
           }
         })
@@ -60,19 +60,24 @@ const Login = () => {
           setLoading(false);
         });
     }
+    return () => {
+      setFormValues(initialValues);
+      setIsSubmit(false);
+      setFormErrors(initialErrors);
+      setLoading(false);
+    };
   }, [isSubmit]);
-
   return (
     <>
       {loading && (
-        <p className="loading animate__animated animate__flash animate__infinite">
+        <p className="loading">
           Cargando...
         </p>
       )}
       <form onSubmit={handelSubmit} className="card__info--input">
         <div className="card__input--title">
-          <h1>Inicia Sesion!</h1>
-          <p>Inicia Sesion para Continuar</p>
+          <h1>¡Inicia Sesión!</h1>
+          <p>Inicia Sesión para Continuar</p>
         </div>
         <label className="pure-material-textfield-outlined">
           <input
@@ -83,6 +88,7 @@ const Login = () => {
             placeholder="Email"
             value={formValues.email}
             onChange={handelChange}
+            className={`${formValues.email.length !== 0 ? "visited" : ""}`}
           />
 
           <span>Correo</span>
@@ -97,6 +103,7 @@ const Login = () => {
             placeholder="Password"
             value={formValues.password}
             onChange={handelChange}
+            className={`${formValues.password.length !== 0 ? "visited" : ""}`}
           />
           <span>Contraseña</span>
         </label>
@@ -105,7 +112,7 @@ const Login = () => {
 
         <div className="card__info--buttons">
           <button className="card__buttons--register" type="submit">
-            Inicia Sesion
+            Inicia Sesión
           </button>
         </div>
         <div className="card__acount">
